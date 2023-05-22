@@ -1,7 +1,7 @@
 # Convolutional Neural Networks for shoreline prediction using camera system observations, Tairua beach, New Zealand
 
 Code to reproduce results in the manuscript submitted for publication "On the use of Convolutional Deep Learning to predict shoreline change", contributors: Eduardo Gomez-de la Pena, Giovanni Coco, Colin Whittaker, and Jennifer Montano.
-Note: Code subject to change in the publication process.
+Note: Code subject to change throughout the publication process.
 
 ## Citation
 
