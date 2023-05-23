@@ -65,8 +65,6 @@ _, mat_in = normal_data(mat_in,train_date)
 scaler, mat_out_norm = normal_data(mat_out,train_date)
 #%%##################TRAIN, DEV AND TEST SPLITS################################
 #Manually split by date 
-#Remember: Tairua the forecast is from July 2014 (2014-07-01) on
-#previous data is training in SPADS and ShoreFor
 train = mat_in[mat_in.index[0]:train_date].values.astype('float32')
 #Development set (2 years before the test set)
 devinit_date=pd.to_datetime(train_date) + timedelta(days=1)
