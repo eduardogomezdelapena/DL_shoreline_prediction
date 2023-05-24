@@ -1,7 +1,6 @@
-# Convolutional Neural Networks for shoreline prediction using camera system observations, Tairua beach, New Zealand
+# Convolutional Neural Networks for shoreline prediction
 
-Code to reproduce results of the manuscript submitted for publication "On the use of Convolutional Deep Learning to predict shoreline change". Contributors: Eduardo Gomez-de la Pena, Giovanni Coco, Colin Whittaker, and Jennifer Montano. School of Environment, The University of Auckland, New Zealand.
-Note: Code subject to change throughout the publication process.
+Convolutional Deep Learning models to predict shoreline change with wave bulk parameters as model inputs. Shoreline data (Tairua, NZ) can be  found at [Coastal and Ocean Collective](https://coastalhub.science/data). Contributors: Eduardo Gomez-de la Pena, Giovanni Coco, Colin Whittaker, and Jennifer Montano. School of Environment, The University of Auckland, New Zealand. Note: Code subject to change throughout the publication process.
 
 ## Citation
 
