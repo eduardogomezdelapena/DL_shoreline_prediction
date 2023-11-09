@@ -1,8 +1,1 @@
-python==3.8.3
-numpy==1.18.5
-keras==2.4.3
-scikit-learn==1.0.2
-matplotlib==3.2.2
-pandas==1.4.1
-tensorboard==2.5.0
-tensorflow==2.4.1
+To ensure that you have the appropriate requirements to run the Python scripts, please create a Mamba environment using the provided .yaml file (cnns_4_schange.yaml).
