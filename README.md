@@ -9,7 +9,7 @@ To ensure that you have the appropriate requirements to run the Python scripts, 
 
 ```
 @article{Gomez-delaPena2023,
-AUTHOR = {Gomez-de la Pena, Eduardo and Coco, Giovanni and Whittaker,Colin and Montano, Jennifer},
+AUTHOR = {Gomez-de la Peña, Eduardo and Coco, Giovanni and Whittaker,Colin and Montano, Jennifer},
 TITLE = {On the use of convolutional deep learning to predict shoreline change},
 JOURNAL = {EGUsphere},
 NOTE = {forthcoming},
