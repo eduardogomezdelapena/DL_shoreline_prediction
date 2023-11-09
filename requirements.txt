@@ -1,1 +1,0 @@
-To ensure that you have the appropriate requirements to run the Python scripts, please create a Mamba environment using the provided .yaml file (cnns_4_schange.yaml).
