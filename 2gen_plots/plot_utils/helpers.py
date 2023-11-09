@@ -106,8 +106,8 @@ def taylor_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     fig.text(0.25, 0.87, 'CNN', ha='center',fontsize=fs)
     fig.text(0.75, 0.87, 'CNN-LSTM', ha='center',fontsize=fs)
     #Uncomment to save plot
-    # plt.savefig('./figures/Fig8.png',
-    #             bbox_inches='tight',dpi=300)
+    plt.savefig('./figures/Fig8.png',
+                bbox_inches='tight',dpi=300)
 
 def ts_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     """   """
@@ -125,7 +125,7 @@ def ts_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     fs_leg= 12
     colors = cvd_fmap(np.linspace(0, 1, 4))
     #Benchmarks
-    ax[0].plot(inputs.yout,'black')
+    ax[0].plot(inputs.yout,'.k', markersize=2)
     ax[0].plot(mat_cnn.spads,color=colors[0],label=r'$SPADS$')
     ax[0].plot(mat_cnn.shorefor,color=colors[1],label=r'$ShoreFor$')
     ax[0].xaxis.set_major_locator(mdates.YearLocator())
@@ -135,7 +135,7 @@ def ts_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     ax[0].legend(loc='lower right',fontsize=fs_leg)
     ax[0].tick_params(axis='both', which='major', labelsize=fs_tk)
     #CNN ensemble
-    ax[1].plot(inputs.yout,'black')
+    ax[1].plot(inputs.yout,'.k', markersize=2)
     ax[1].fill_between(mat_cnn.index, y1=lower, y2=upper, 
                  alpha=0.3, color=colors[2])
     ax[1].plot(mat_cnn.index, mean, alpha=0.9,
@@ -147,7 +147,7 @@ def ts_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     ax[1].legend(loc='lower right',fontsize=fs_leg)
     ax[1].tick_params(axis='both', which='major', labelsize=fs_tk)
     #CNN-LSTM ensemble
-    ax[2].plot(inputs.yout,'black')
+    ax[2].plot(inputs.yout,'.k', markersize=2)
     ax[2].fill_between(mat_hyb.index, y1=lower_hyb, y2=upper_hyb, 
                  alpha=0.3, color=colors[3])
     ax[2].plot(mat_hyb.index, mean_hyb, alpha=0.9,
@@ -163,8 +163,8 @@ def ts_plot(mat_hyb,mat_cnn,inputs,cvd_fmap):
     fig.text(0.04, 0.5, 'Cross-shore displacement ' r'$[m]$', va='center',
          rotation='vertical',fontsize=fs)
     #Uncomment to save plot
-    # plt.savefig('./figures/Fig7.png',
-    #             bbox_inches='tight',dpi=300)
+    plt.savefig('./figures/Fig7.png',
+                bbox_inches='tight',dpi=300)
     
 def heat_plot(mat_hyb,mat_cnn,inputs):
     
@@ -228,8 +228,8 @@ def heat_plot(mat_hyb,mat_cnn,inputs):
     fig.text(0.04, 0.5, 'Modelled cross-shore displacement ' r'$[m]$',
              va='center', rotation='vertical',fontsize=fs)
     #Uncomment to save plot
-    # plt.savefig('./figures/Fig9.png',
-    #             bbox_inches='tight',dpi=300)
+    plt.savefig('./figures/Fig9.png',
+                bbox_inches='tight',dpi=300)
     
 def coverage_plot(mat_hyb,mat_cnn,inputs):
     
@@ -278,18 +278,56 @@ def coverage_plot(mat_hyb,mat_cnn,inputs):
     #For plotting aesthetics
     color= "lightskyblue"; alpha= 1;
     fs_tk= 12; fs_leg= 11; ms= 4
-
+    fs= 20
     fig,ax = plt.subplots(figsize=(11.8,4))
 
     plt.fill_between(yresults.index, y1=yresults["hyb_l"], y2=yresults["hyb_u"], 
                      alpha=alpha, color=color, label="Min-max envelope")
-    plt.plot(yresults["obs"],'.k',ms=ms,label= str( 100- round(obs_perc,1)) + "%" )
-    plt.plot(or_shift["obs"],'.r',ms=ms, label= str( round(obs_perc,1)) + "%"  )
+    plt.plot(yresults["obs"],'.k',ms=ms,label= "Outside envelope " + "("+ str( 100- round(obs_perc,1)) + "%" + ")")
+    plt.plot(or_shift["obs"],'.r',ms=ms, label="Inside envelope " + "("+ str( round(obs_perc,1)) + "%" + ")" )
     plt.legend()
 
     ax.set_xlim([date(2014, 8, 9), date(2016, 12, 30)])
     ax.legend(loc='lower right',fontsize=fs_leg)
     ax.tick_params(axis='both', which='major', labelsize=fs_tk)
+    fig.text(0.04, 0.5, 'Cross-shore \ndisplacement ' r'$[m]$', va='center',
+      rotation='vertical',fontsize=fs)  
+    
+    #Legend order
+    #get handles and labels
+    handles, labels = plt.gca().get_legend_handles_labels()
+
+    #specify order of items in legend
+    order = [2,1,0]
+
+    #add legend to plot
+    plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],
+               loc= "lower right")
+
     # Uncomment to save plot
-    # plt.savefig('./figures/Fig10.png',
-    #             bbox_inches='tight',dpi=300)
+    plt.savefig('./figures/Fig10.png',
+                bbox_inches='tight',dpi=300)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
