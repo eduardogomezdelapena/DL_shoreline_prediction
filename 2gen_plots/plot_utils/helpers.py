@@ -302,7 +302,7 @@ def coverage_plot(mat_hyb,mat_cnn,inputs):
 
     #add legend to plot
     plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order],
-               loc= "lower right")
+               loc= "lower right", fontsize=10)
 
     # Uncomment to save plot
     plt.savefig('./figures/Fig10.png',
