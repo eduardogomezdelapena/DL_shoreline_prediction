@@ -9,10 +9,12 @@ To ensure that you have the appropriate requirements to run the Python scripts, 
 
 ```
 @article{Gomez-delaPena2023,
-AUTHOR = {Gomez-de la Peña, Eduardo and Coco, Giovanni and Whittaker,Colin and Montano, Jennifer},
-TITLE = {On the use of convolutional deep learning to predict shoreline change},
-JOURNAL = {EGUsphere},
-NOTE = {forthcoming},
-YEAR= {2023},
-DOI = {10.5194/egusphere-2023-958}
+  title={On the use of Convolutional Deep Learning to predict shoreline change},
+  author={Gomez-de la Pena, Eduardo and Coco, Giovanni and Whittaker, Colin and Montano, Jennifer},
+  journal={EGUsphere},
+  volume={2023},
+  pages={1--24},
+  year={2023},
+  DOI = {10.5194/egusphere-2023-958},
+  publisher={Copernicus Publications G{\"o}ttingen, Germany}
 }
